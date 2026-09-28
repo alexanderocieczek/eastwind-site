@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eastwindadvisory.com/sitemap.xml

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eastwind</title>
+<meta name="description" content="Eastwind supports Western companies in China and Southeast Asia with practical, implementation-focused work in operations, sourcing and growth.">
+<meta property="og:title" content="Eastwind">
+<meta property="og:description" content="Eastwind supports Western companies in China and Southeast Asia with practical, implementation-focused work in operations, sourcing and growth.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eastwindadvisory.com/">
+<meta name="theme-color" content="#344656">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://eastwindadvisory.com/">
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Archivo:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --slate:#344656; --slate-deep:#28363F; --slate-tint:#3E5265;
+  --ink:#171F28; --paper:#F5F3EF; --panel:#FFFFFF;
+  --line:#E0DBD3; --line-strong:#C9C2B7; --muted:#6B7280;
+  --lacquer:#B2352C; --sand:#C6BDAF;
+  --chart:rgba(255,255,255,.62); --chart-fill:rgba(255,255,255,.075); --grat:rgba(255,255,255,.13);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#ECEAE5; --paper:#131920; --panel:#1B232C; --line:#2C3641; --line-strong:#3B4754;
+    --muted:#98A2AE; --sand:#8F877B; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#ECEAE5; --paper:#131920; --panel:#1B232C; --line:#2C3641; --line-strong:#3B4754;
+  --muted:#98A2AE; --sand:#8F877B; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:300;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.shell{max-width:1120px;margin:0 auto;padding-inline:24px}
+.serif{font-family:Newsreader,Georgia,"Times New Roman",serif}
+a{color:inherit}
+
+/* ---------- header ---------- */
+.top{background:var(--slate);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-block:24px;flex-wrap:wrap}
+.wordmark{font-family:Archivo,Arial,sans-serif;font-weight:500;font-size:18px;letter-spacing:.26em;
+  text-transform:uppercase;text-decoration:none;color:#fff;white-space:nowrap}
+.wordmark{display:inline-flex;align-items:center;gap:12px}
+.wordmark .mk{height:19.5px;width:auto;fill:currentColor;display:block}
+.frow .wordmark .mk{height:15px}
+nav.main{display:flex;gap:30px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+nav.main a{color:rgba(255,255,255,.7);text-decoration:none;padding-block:4px;border-bottom:1px solid transparent}
+nav.main a:hover,nav.main a:focus-visible{color:#fff;border-bottom-color:rgba(255,255,255,.5)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--slate);color:#fff;position:relative;overflow:hidden}
+.hero .shell{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;
+  align-items:center;padding-block:56px 84px;position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  color:rgba(255,255,255,.58);margin:0 0 26px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--lacquer)}
+.hero h1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(36px,5.4vw,60px);
+  line-height:1.06;letter-spacing:-.018em;margin:0;max-width:15ch;text-wrap:balance}
+.hero .stand{margin:28px 0 0;max-width:50ch;font-size:clamp(16.5px,1.9vw,18.5px);line-height:1.62;
+  color:rgba(255,255,255,.8);font-weight:300}
+.hero .ways{margin:38px 0 0;padding:0;list-style:none;display:flex;gap:34px;flex-wrap:wrap}
+.hero .ways li{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.hero .ways a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:5px}
+.hero .ways a:hover{border-bottom-color:#fff}
+.chart{position:relative;min-height:340px}
+.chart svg{width:118%;height:auto;display:block;margin-left:-6%}
+.chart .lbl{font-family:Archivo,Arial,sans-serif;font-size:12.5px;font-weight:400;fill:rgba(255,255,255,.88);letter-spacing:.02em}
+.chart .lbl.dim{fill:rgba(255,255,255,.5)}
+@media (max-width:860px){
+  .hero .shell{grid-template-columns:1fr;padding-block:40px 60px}
+  .chart svg{width:100%;margin-left:0}
+}
+.route{stroke:var(--lacquer);stroke-width:1.4;fill:none;stroke-dasharray:1600;stroke-dashoffset:1600;
+  animation:draw 2.2s ease-out .35s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){ .route{animation:none;stroke-dashoffset:0} }
+
+/* ---------- section scaffolding ---------- */
+section{padding-block:88px}
+.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted);
+  margin:0 0 20px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:22px;height:1px;background:var(--lacquer)}
+h2{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.14;
+  letter-spacing:-.012em;margin:0 0 20px;max-width:22ch;text-wrap:balance}
+.lede{font-size:18.5px;line-height:1.6;max-width:58ch;margin:0;font-weight:300}
+.lede strong,.svcp strong{font-weight:500}
+
+/* statement */
+.statement .shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:44px;align-items:start}
+.statement p.big{font-family:Newsreader,Georgia,serif;font-size:clamp(22px,2.6vw,29px);line-height:1.38;
+  font-weight:300;margin:0 0 22px;letter-spacing:-.006em}
+.statement p.big:last-child{margin:0}
+.statement p.big em{font-style:italic;font-weight:400}
+@media (max-width:860px){ .statement .shell{grid-template-columns:1fr;gap:20px} }
+
+/* ways of working */
+.ways2{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border-top:1px solid var(--line-strong)}
+.ways2 > div{padding:34px 40px 40px 0}
+.ways2 > div + div{padding-left:40px;padding-right:0;border-left:1px solid var(--line)}
+.ways2 h3{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:27px;margin:0 0 14px;letter-spacing:-.01em}
+.ways2 p{margin:0 0 18px;font-size:16.5px;max-width:44ch}
+.ways2 ul{margin:0;padding:0;list-style:none;font-size:14.5px;color:var(--muted)}
+.ways2 li{padding:8px 0;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .ways2{grid-template-columns:1fr}
+  .ways2 > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line-strong)}
+}
+
+/* expertise rows */
+.rows{margin-top:46px;border-top:1px solid var(--line-strong)}
+.row{display:grid;grid-template-columns:76px minmax(0,1fr) minmax(0,1.25fr);gap:34px;
+  padding-block:40px;border-bottom:1px solid var(--line)}
+.row .num{font-family:Newsreader,Georgia,serif;font-size:44px;line-height:1;color:var(--sand);
+  font-variant-numeric:tabular-nums;font-weight:300;padding-top:4px}
+.row h3{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:29px;line-height:1.15;margin:0 0 12px;letter-spacing:-.01em}
+.row .svcp{margin:0;font-size:16.5px;max-width:40ch}
+.row .typ{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:6px 0 12px}
+.row ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:26px;
+  font-size:14.5px;line-height:1.45;color:var(--ink)}
+.row li{padding:8px 0;border-top:1px solid var(--line)}
+@media (max-width:860px){
+  .row{grid-template-columns:1fr;gap:14px}
+  .row .num{font-size:30px}
+}
+@media (max-width:520px){ .row ul{grid-template-columns:1fr} }
+
+/* markets */
+.markets{background:var(--slate-deep);color:#fff}
+.markets .kicker{color:rgba(255,255,255,.55)}
+.markets h2{color:#fff}
+.markets .lede{color:rgba(255,255,255,.78)}
+.markets .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:50px;align-items:center}
+.mlist{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px;margin-top:34px}
+.mlist h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);
+  font-weight:500;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.2)}
+.mlist ul{margin:0;padding:0;list-style:none;font-size:15px;line-height:1.9;color:rgba(255,255,255,.88)}
+.mlist .base{grid-column:1 / -1;font-size:14px;color:rgba(255,255,255,.62);margin-top:6px}
+.chart2 svg{width:100%;height:auto;display:block}
+@media (max-width:860px){ .markets .shell{grid-template-columns:1fr} }
+
+/* work */
+.cases{margin-top:44px;border-top:1px solid var(--line-strong)}
+.case{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.9fr);gap:34px;padding-block:32px;border-bottom:1px solid var(--line)}
+.case .who{font-family:Newsreader,Georgia,serif;font-size:23px;line-height:1.2;margin:0 0 8px;font-weight:400}
+.case .where{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.case p{margin:0 0 12px;font-size:16.5px;max-width:64ch}
+.case .out{font-size:14px;color:var(--muted);margin:0}
+.case .out b{color:var(--ink);font-weight:500}
+@media (max-width:760px){ .case{grid-template-columns:1fr;gap:10px} }
+.disc{font-size:13.5px;color:var(--muted);margin:18px 0 0;max-width:64ch}
+
+/* contact */
+.contact{background:var(--slate);color:#fff}
+.contact .kicker{color:rgba(255,255,255,.55)}
+.contact .lede.big{font-family:Newsreader,Georgia,serif;font-size:clamp(23px,2.8vw,32px);line-height:1.32;
+  color:#fff;max-width:30ch;font-weight:300;letter-spacing:-.006em}
+.cform{margin-top:40px;max-width:640px;display:grid;gap:22px}
+.cform .f{display:grid;gap:8px}
+.cform label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.6)}
+.cform input[type=email],.cform textarea{width:100%;background:rgba(255,255,255,.06);color:#fff;
+  border:1px solid rgba(255,255,255,.28);border-radius:2px;padding:13px 14px;font:inherit;font-size:16px;font-weight:300}
+.cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.38)}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.09)}
+.cform textarea{resize:vertical;min-height:150px}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.f-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.cform button{font-family:Archivo,Arial,sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:500;background:#fff;color:var(--slate);border:0;border-radius:2px;padding:14px 26px;cursor:pointer}
+.cform button:hover{background:#EDE9E2}
+.cform button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cform button[disabled]{opacity:.6;cursor:default}
+.f-note{margin:0;font-size:14px;color:rgba(255,255,255,.75)}
+.f-note.err{color:#F2B8B3}
+
+/* footer */
+footer.site{background:var(--slate-deep);color:rgba(255,255,255,.55);font-size:12.5px}
+.frow{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-block:26px}
+.frow .wordmark{font-size:14px;letter-spacing:.22em}
+.frow .wordmark small{display:none}
+</style>
+
+<header class="top">
+  <div class="shell bar">
+    <a class="wordmark" href="#top"><svg class="mk" viewBox="0 0 1044 1038" aria-hidden="true" focusable="false"><path d="M58.1 22.6 L985.9 22.6 L1044.0 71.0 L985.9 119.4 L58.1 119.4 L0.0 71.0 Z M58.1 641.6 L985.9 641.6 L1044.0 690.0 L985.9 738.4 L58.1 738.4 L0.0 690.0 Z M466.0 22.6 L579.0 22.6 L579.0 1038.0 L466.0 1038.0 Z M181.5 302.0 L294.5 302.0 L294.5 690.0 L181.5 690.0 Z M751.5 302.0 L864.5 302.0 L864.5 690.0 L751.5 690.0 Z M181.5 430.6 L864.5 430.6 L864.5 527.4 L181.5 527.4 Z M579.0 690.0 L750.8 690.0 L1037.4 940.3 L963.1 1025.4 Z M81.9 1025.4 L7.6 940.3 L294.2 690.0 L466.0 690.0 Z"/></svg><span>Eastwind</span></a>
+    <nav class="main" aria-label="Sections">
+      <a href="#firm">Firm</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#markets">Markets</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="shell">
+    <div>
+      <p class="eyebrow">Operations · Sourcing · Growth</p>
+      <h1>Advice that gets implemented, in China and Southeast&nbsp;Asia.</h1>
+      <p class="stand">Eastwind is specialized in supporting Western companies in Asia. We offer practical support with a focus on operations, sourcing and growth. Our strength lies in our practical approach, focused on implementation over abstract advice.</p>
+    </div>
+    <div class="chart" aria-hidden="true">
+      <svg viewBox="0 0 900 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of East and Southeast Asia"><path d="M-8,800L-8,586L-8,340L-8,48L-8,-40M99,800L99,586L99,340L99,48L99,-40M205,800L205,586L205,340L205,48L205,-40M312,800L312,586L312,340L312,48L312,-40M418,800L418,586L418,340L418,48L418,-40M525,800L525,586L525,340L525,48L525,-40M631,800L631,586L631,340L631,48L631,-40M737,800L737,586L737,340L737,48L737,-40M844,800L844,586L844,340L844,48L844,-40M-40,693L-34,693L-8,693L19,693L45,693L72,693L99,693L125,693L152,693L179,693L205,693L232,693L258,693L285,693L312,693L338,693L365,693L391,693L418,693L445,693L471,693L498,693L525,693L551,693L578,693L604,693L631,693L658,693L684,693L711,693L737,693L764,693L791,693L817,693L844,693L871,693L897,693L924,693L940,693M-40,586L-34,586L-8,586L19,586L45,586L72,586L99,586L125,586L152,586L179,586L205,586L232,586L258,586L285,586L312,586L338,586L365,586L391,586L418,586L445,586L471,586L498,586L525,586L551,586L578,586L604,586L631,586L658,586L684,586L711,586L737,586L764,586L791,586L817,586L844,586L871,586L897,586L924,586L940,586M-40,479L-34,479L-8,479L19,479L45,479L72,479L99,479L125,479L152,479L179,479L205,479L232,479L258,479L285,479L312,479L338,479L365,479L391,479L418,479L445,479L471,479L498,479L525,479L551,479L578,479L604,479L631,479L658,479L684,479L711,479L737,479L764,479L791,479L817,479L844,479L871,479L897,479L924,479L940,479M-40,369L-34,369L-8,369L19,369L45,369L72,369L99,369L125,369L152,369L179,369L205,369L232,369L258,369L285,369L312,369L338,369L365,369L391,369L418,369L445,369L471,369L498,369L525,369L551,369L578,369L604,369L631,369L658,369L684,369L711,369L737,369L764,369L791,369L817,369L844,369L871,369L897,369L924,369L940,369M-40,251L-34,251L-8,251L19,251L45,251L72,251L99,251L125,251L152,251L179,251L205,251L232,251L258,251L285,251L312,251L338,251L365,251L391,251L418,251L445,251L471,251L498,251L525,251L551,251L578,251L604,251L631,251L658,251L684,251L711,251L737,251L764,251L791,251L817,251L844,251L871,251L897,251L924,251L940,251M-40,121L-34,121L-8,121L19,121L45,121L72,121L99,121L125,121L152,121L179,121L205,121L232,121L258,121L285,121L312,121L338,121L365,121L391,121L418,121L445,121L471,121L498,121L525,121L551,121L578,121L604,121L631,121L658,121L684,121L711,121L737,121L764,121L791,121L817,121L844,121L871,121L897,121L924,121L940,121M-40,-30L-34,-30L-8,-30L19,-30L45,-30L72,-30L99,-30L125,-30L152,-30L179,-30L205,-30L232,-30L258,-30L285,-30L312,-30L338,-30L365,-30L391,-30L418,-30L445,-30L471,-30L498,-30L525,-30L551,-30L578,-30L604,-30L631,-30L658,-30L684,-30L711,-30L737,-30L764,-30L791,-30L817,-30L844,-30L871,-30L897,-30L924,-30L940,-30" fill="none" stroke="var(--grat)" stroke-width="0.7"/><path d="M532.9,800L533.9,799.7L540.4,793.4L544.1,786.3L549.6,781.4L547.5,773.3L556.2,763.6L562.5,775.6L564.8,768.3L561.7,764.1L564.2,760.8L565.6,762.9L572,762.4L573.3,760L571.8,753.1L578.5,748L581.5,749L579.7,744.5L583.9,742L587.2,743.4L590.4,736.7L594.5,738.4L598,733.8L606.2,738.8L611.8,744.9L611.5,748.1L614.8,745.3L623.2,746.2L627.1,749.2L629.4,745.8L624.4,741L627.9,736.4L629.3,732L633.7,729L632.8,725.2L637.6,719.5L644.7,715.5L646.3,717.8L655,716.8L659,715.2L659.5,711L650.3,706.9L655.1,706.1L659.5,709.4L663.2,708.9L664.9,711.6L672.6,713L676.1,714.9L681.3,714.6L686.6,717.2L692.6,713.8L697.6,719.5L700.6,714.3L705,718.6L700.6,723.4L699.8,728.2L694.1,729L693.6,738.3L688.5,745L689.9,747.7L713,761.3L718.8,766.7L726.9,768.7L729.4,773.5L737.8,777.6L746.3,774.4L750.4,765.9L754.8,748.3L753.1,734.4L754.6,725.1L757.9,723.5L755.4,718.6L758.2,713.7L760.5,703.4L763.6,700.8L767.7,707.3L768,712.9L771.3,714.3L771.3,714.3L770.6,718.1L773.7,721.8L775.6,730.5L775.2,733.8L777.4,740.5L779.6,741.7L785.1,739.2L786.9,742.1L793.8,747L793.6,752.9L795.6,759.3L795.2,763.2L800.3,770.6L802.7,776.9L801.6,782.9L804.9,787.2L806.4,793.1L816.4,796.5L819.8,800L532.9,800ZM606.8,577.1L608.4,577.2L612,571.2L617,569.4L617.2,574.3L612.5,578.3L619.3,583.8L609.5,581.1L609.5,588.7L612.4,593.9L610.2,593.6L606.4,588.7L605.5,577.1L603.5,572.8L605.8,566.5L610.1,562.7L608.5,566.6L609.8,571.9L606,575.3ZM495.9,495.9L496.3,493L503.5,487L514.1,475.3L519.2,464.5L521.2,473.1L515.9,478.4L511.6,480L507.9,487.1ZM551.1,461.6L558.2,462.4L554,470.2L545.7,474.1L546.9,461.3L545.4,458.5ZM557.9,489.2L551.8,484.7L550.8,479.5L554.9,478.1L554.5,473.6L556.3,469.5L559.2,468.3L562.5,470.6L558.2,480.6L559.9,486.9ZM573.2,464.5L577,464.2L577.9,470.6L580.5,476.2L575.4,477.3L575.6,471.7L571.8,469.1L570.6,462.5ZM580.3,451.6L583.5,455.3L583,461.8L585.3,466.5L580.2,466.7L576.5,459.8L571.8,455.7L570.2,451.2ZM532,441.3L537.3,441.8L540.7,445L540.9,450.4L537.7,455L534.8,452.5L532.7,446.8L528.8,440.8ZM907.4,657.4L904.8,659.3L900.8,657.8L899.3,653.4L894.8,649.8L894.3,644.2L898.2,646ZM875.5,636.8L872.4,634L871.6,628.7L867.3,623.4L852.7,615L852.7,613.5L867.1,622.4L876,629.8L877.3,632.5ZM721.9,674.5L712.8,676L716.3,667.7L719.3,665.5L724.3,665L726.7,668.3ZM628.4,616.6L635,617.9L640.1,624.1L639.6,627.2L629.3,621.5L625.3,622.9L617.7,621.3L614.2,622.5L608.4,620.4L611.8,616.6L624.9,615.8ZM597.6,619L601.5,622.2L601.5,624.8L595.7,626.8L590.7,624.5L588.7,619.9ZM554.2,678.1L542.1,681.2L535.5,681.6L530.4,680.2L523.5,680.8L523.7,676.3L531,674.1L540.5,677.8L545.5,676.4L548.6,678.3L554.9,674.8ZM524.7,686.4L533.4,693.5L529.2,696.3L520.3,690.7L514.8,689.9L515.8,686.5ZM505.8,675L513.7,675.2L515.3,678.7L493.2,683.4L490.3,682.4L490.8,677.3L494.3,675.5L498.6,676.1L501.2,679.2L505.7,677.9L500.6,673.2ZM488.7,678.1L485.9,681.6L482.8,679.6L482.6,676.3L486.2,673.7L489.7,675.7ZM476.1,673.2L478.8,675.9L473.6,680.4L465.7,672.8ZM375.9,603.9L379.4,612.3L384.2,613.5L382.6,618.8L375.4,616.2L373.2,609.3L366.3,607.8L371,602.4ZM864.3,631.9L869.5,632.4L869.5,636.5L865.4,639.4L866.7,643.2L860.1,645.3L857,649.2L848.5,653.1L840.2,653.2L826.9,647.6L826.3,645.2L835.9,645.5L845,644L847.1,645.1L854,643.9L858,639L861.7,638.1L860.9,630.9ZM602.2,676.1L592.5,681.8L582.1,685.3L571.6,694.7L563.3,696.5L564,688.9L566.9,686.3L573.2,684L579.7,678.5L586.3,676.8L595,676.5L598.7,675ZM588.5,486.4L591.8,491.5L594.6,508.7L590.5,513L590.4,518.8L586.5,507.8L582,513.6L584.9,522.3L580.8,526L580.6,521.7L578.1,523.5L569.4,519.6L567,512.9L569.3,507.1L566.8,504.2L561.7,502.7L560.6,507L557.5,503.9L551.1,504.2L547.3,511.9L545.4,511.7L547.2,502.7L549.4,500.3L555.5,499L561.1,493.1L565.5,496L564.5,500L569.2,498.2L571.9,494.1L574.9,494.6L576.4,490.2L583.1,489.7L583.3,481.7ZM536.2,384.3L544.2,387.9L549,386.7L547.4,395L551.3,401L547.3,411.4L541.5,414.2L539.3,421L542.6,427.4L543.3,433.7L546.7,436.1L551,432L554.9,432.8L558.9,438.3L559.9,434.9L565.6,437.7L562.3,439.4L564.8,445.3L568.6,446.1L567.7,451.2L566.2,447.1L559.8,446L558.2,441.6L550.8,436.8L553,443.7L543.4,436.2L537.3,439.5L531.3,437.7L531.1,433.5L534.5,428.4L530.8,425.8L529.2,430.6L525.4,426.2L522.7,409.9L526.2,413L528.7,411L528.3,395.3L530.9,385.5ZM668,593.8L673.3,594L676.3,600.6L674.7,604.4L675.2,609.5L678.5,616.3L680.3,613.1L684.6,621.6L689.4,621.7L697.4,613.6L699,610.3L707.3,607.7L706.8,605.7L714.1,601.9L723.1,605.2L735.2,611.1L744.1,612.1L761,618.9L774.8,622.7L780.2,626.4L785.6,627.2L791.6,632.5L794.3,632.8L798.9,637.5L798.6,643.7L812.3,649.2L816,649.6L820.5,653.5L820.6,657.6L813.3,657.8L811.6,660.1L814,664.9L824,672.7L825.3,677.5L828.8,682.9L835.9,683.1L835.4,686.7L843.6,689.4L842.6,693.2L851,695.9L850.8,698.7L847.3,700.2L841.3,696.9L820.2,693.9L812.2,686.5L811.6,683L808.7,682.6L801.7,672.4L790.4,669.4L785.5,666.9L782.5,669L779,668L779.4,671L775.3,671.4L775.9,673.7L770.4,674.9L773.3,681.9L765.6,685.9L761.2,684.2L749.5,684.7L745.8,682L736.8,672.6L725.3,673.1L727.8,667.1L724.1,663.5L727.3,663L722.5,660.1L725.4,659.3L720.8,653.8L716.8,644.4L706.4,638.6L694.6,634.4L686.3,633.5L681.6,630.8L681.1,628.2L673.3,626.8L669.9,621.9L665.6,629.4L662.6,629.7L660.3,625.6L660.3,621.2L652,615.8L654.7,614.6L660,615.8L665,612.1L669.4,613.2L672.6,611.6L672.8,608.5L662.5,610.3L655.5,610L652.5,607.3L651.5,602.7L641.6,601.3L644.4,595.2L650.2,593.6L653.6,590.9L658.9,589.9ZM576.6,575.5L571.6,581.1L564.5,582.8L557.4,580.9L535.3,581.4L529.4,580.7L524.7,588.2L525.6,593L531.6,600.7L535.5,601.1L540.7,595.2L545.5,596L548.8,594.1L560.5,593L560.5,596.8L554.4,596.4L551.2,600.5L542.8,605.9L538.9,606.8L544.2,610.9L550.1,620.2L548.5,624.7L555.2,629.9L555.4,632.5L548,634L544.9,637.8L540.3,634.9L541.8,629.7L534.2,624L535.7,615.4L531.5,614.5L527.2,618.6L529.2,625.6L528.8,636.5L527.5,641L529.1,645.7L521.5,646.8L517.9,643.9L520.4,633.2L520.5,629.1L518.3,623.1L512.5,622.3L511.6,615.5L514.8,612.5L517.3,606.6L517.2,601.1L521.4,593.4L522.9,595.3L521.6,587L525.1,578.7L528,575.6L530.9,577L534.2,572.4L541.5,574.7L550.5,575.3L555.3,577.1L565.5,577.2L570,575.2L577.6,568L580.2,570.1ZM390.1,650.2L393.2,652.4L399.9,652.9L404,658.6L422.6,660.2L425.9,655.2L430.3,657.3L434.5,657L440.3,659.7L445.1,660L447.8,666.7L452.6,668.5L461.4,667.6L465.4,670.4L464.8,675.9L466.9,679.8L452.7,674.6L446.6,675.9L434.1,674.8L424.5,673.2L416.5,669.7L404.7,668L401.6,669.4L395.9,668.6L389.2,665.9L380.3,664.8L381,661.4L370,658.5L376.3,649.2L384.3,651.1L386.6,649.1ZM274.3,530.3L284.5,530.3L289.3,534.1L292.9,539L293.6,542.5L308.8,552.2L316.5,562.1L321.1,565.3L322.7,562.1L327.3,568.1L330.6,568.8L337.9,577.8L347.1,580.6L351.9,585.6L348.1,588.1L348.1,591.8L351.2,595.5L358,597.2L359.7,605.5L363.2,608.4L362,613.5L365.1,611.2L371,612.6L375.9,619.2L373.8,624.6L374.3,639.5L373.5,646.6L371.4,647.9L368.6,645.3L365.7,647.4L361,645L360.6,649.1L352.4,640.2L338.6,630.3L334.2,624.4L328.4,619.8L320.6,608.9L320.7,606.7L314.9,594.9L307.3,585L302.6,582.4L298.8,570.2L296.3,565.8L287.1,561L286,555.8L279.3,548L273.7,545.4L263.6,535.4L260.6,529.8L260.8,526.8L265.1,526.3L270.4,529.7ZM490.5,514.7L494,511.7L499.5,517L499.2,522.7L503.3,521.5L509.6,526.5L516.3,528.4L515.3,531.7L506,532.9L505.2,534.6L509.6,538.6L503.3,540.8L500.5,539.9L497.5,542.7L500.9,546.8L494.4,547.3L496.3,552.1L499.1,553.5L503.9,561.4L501,564.5L504.1,568L513.7,575.6L508.9,577.4L502.3,574.4L498.1,583.6L497.5,589.5L498.7,593.8L495.1,596L484.9,605.1L486.4,605.1L487.6,612.8L485.7,613L484.7,619.4L481.5,624.4L468,630.5L466.2,622.1L461.5,621L458.5,622.9L450.4,617.3L449.7,620L445.7,622.3L442.4,621.5L437.5,623.7L437.5,618.7L432.6,617.3L428,618.8L424.2,616.9L421.3,617.9L418.3,601L415.8,596.9L410.3,593.9L408.8,590.8L410.2,585.8L406.8,582.3L406.4,577.6L408.2,570.2L414.1,564.5L417.9,567.8L421.8,567.8L429.8,571.2L431.3,560.2L436.5,555.7L450.5,552L459.8,540.9L460.5,537.7L469.6,533.4L475.3,533.5L475.8,528.4L479.8,527.1L489.9,511.6ZM777.1,-40L778.1,-35.1L783,-19.1L786.7,-11L781.4,-17.4L777.2,-19.1L770.5,-17.3L764.9,0.9L764.7,6.2L769.5,14.3L771.7,21L774.6,21.7L775.6,27.7L774,32.8L772.4,24.7L764.9,22.5L759.6,34.6L756.9,26.3L759.1,15.6L758.4,8.6L760.7,1.8L757.3,-10L760.3,-23.3L759.5,-39L759.7,-40L777.1,-40ZM778.2,61.6L788.5,64.3L794.3,58.4L791.8,66.9L796.1,75.5L786.7,78.8L782.1,78.4L775.6,83.9L771.9,92.5L757.2,84.2L748,87.6L742.6,84.5L740.8,87.7L749.7,95.3L744.5,95.1L739,100.7L738.6,93.8L735.5,86.9L736.3,83.2L742.6,77.3L741.6,73.6L751.3,75.2L755,63.1L756.4,52.7L754.3,46.1L758.1,40.7L766.2,51.2ZM750.5,101.4L752.9,101L753,112.2L756.6,116.7L758.7,123.6L757.7,133L755.1,134.9L753.1,142.6L749.3,143.5L747.3,148.8L748.5,155.3L747.8,161.5L744.1,168.1L744.1,174L746.8,178.4L742.3,181.2L741.3,185.5L736.6,189.2L735.6,184L738.4,180.8L735.7,179.3L733.6,186L729.5,184.2L725.7,192.7L722.3,186.7L718.2,193.1L704.3,190.4L704,187.1L700.5,192L704,196.6L698.4,198.5L694,206.4L689,206.5L686.1,202.1L685.3,197.1L688.3,194.3L681.5,190.9L664.4,196.9L654.8,197.9L653.8,202.9L649.5,200.1L640.8,201.1L641.7,195.7L645.4,195.5L662.1,181.2L666.9,181.9L675.9,180.8L686.1,178.1L691.5,181.3L695.9,177.8L695,174.9L702.3,165L703.8,156.4L708.9,154.6L704.7,159.2L705.7,163.7L719.6,158.6L725.6,150.2L731.1,146.2L737.8,128.9L738,124.2L734.7,121.8L737.6,116.3L736.7,112.4L740.4,108.9L741.6,103.5L744.7,108.2L749.4,108.4L750.2,103.3L746,104.8L747.4,99.6ZM677.4,197.5L680.3,197.9L681.5,203.1L677.6,205.8L675.5,210.4L669.7,207.1L666,209L662.7,215.6L659.1,216.6L656.7,208.1L660.6,200.9L669.1,200.6L674.4,196.2ZM643.5,205.9L647.8,205.2L647.3,210.1L651.2,210.3L652,215.5L649.4,218.7L645.2,233.6L638.3,238.5L639.4,235.3L638,229.7L637.3,236.4L633.1,235L634.4,231.2L633.1,225L637.8,218.4L635,212.4L629.1,217L626.5,210.5L634.9,205.5L636.2,202.9L641.1,202.4ZM535.3,338.8L533.5,346.8L528,339.7L525.3,332.6L525.9,326.8L535.6,310.7L541.5,307.8L545.1,311.4L539.4,332.4ZM427.5,368.8L428.8,372.6L424.2,378.1L422.9,382.8L412.9,388.8L404.2,385.2L404.2,376.2L410.7,369.8L425.3,367.2ZM98.5,481.1L101.4,481.3L106.2,485.9L113.3,496L113.9,499.4L118.6,508.3L118.5,512.4L116.1,517.5L106.4,522.3L99.7,520.5L97.2,513.2L95.5,499.9L96.6,500.1L99.4,488.9ZM742.6,-40L742.5,-39.5L743,-23.8L739.3,-6.3L730.8,3.8L726.8,11.8L722.4,16.9L719.7,24.9L712.8,36L703.4,45.9L693.5,57.8L685.6,70.4L670.5,80.5L664.6,82.5L655.5,79.8L655.6,73.5L650.9,76.7L650.1,74.3L643.3,83.5L638.5,83.1L638.8,87.8L635.8,88.2L628.4,96.6L627.9,108.7L612.9,120.2L605.1,123.8L603.3,131.7L607.4,133.4L613.7,139.7L616.3,145.8L623.9,157.9L625.4,165L624.7,174.1L626.5,174.1L622.6,185.5L615.2,186.6L614.4,189.6L606.6,188.5L602.5,194.8L601.7,191L597.9,195.1L593.8,196.3L591.2,192.1L594,191.8L591.5,185.9L593.6,179.4L596,177.8L593.6,165.6L590.7,163.3L594.6,161.3L598.6,162.8L594.4,151.9L589.7,151.6L585.9,148.3L581.6,151.8L577.6,149L580.4,147.3L574.5,146.4L581,139.1L579.4,136.3L581.6,127.3L575.4,124.1L573.9,126.1L570.8,120.6L568.2,122.9L556.8,125.2L549.4,129.5L542.1,136.4L536.9,138.2L536.3,135.6L542.4,133L543.9,129.2L538.1,129.2L540.7,122.9L543.7,121.4L548.7,113.2L544.3,108.9L537,108.1L529.6,117.5L520.2,122.1L512.9,132.2L506.4,133.6L500.9,132.7L498.5,139.6L503.4,145.6L513.2,147.5L514.8,152.1L513.4,157.1L518.7,159.9L532.5,150.4L542,155.4L546.4,154.5L552.2,155.8L551.3,162.3L545.1,162.1L535,166.9L531.8,172.6L525.1,176.6L518.5,183.9L516,191.1L527.4,197.3L529.9,205.4L533.8,213.4L533.6,217.8L539.5,221.5L544.4,229.9L532.1,226.4L542.2,234.7L544.5,239.7L540.8,240.6L533.3,246.7L529.3,246.2L531.3,249.4L536.9,247.3L546.7,252.6L540.6,257.3L545.2,255.8L544.9,261.6L540.2,267.6L541.6,270.9L536.2,271.9L527.5,286.2L525.5,291.3L520.1,289.9L523.2,295.3L516.7,299.6L520.5,299.2L520.2,306.7L515.4,306.2L512.9,311.9L509.2,316L504.2,315.4L503.8,319.9L488.6,330.3L486.9,335L484.6,334.6L476.6,337.6L473.4,336.5L469.7,338.8L464.3,339.1L463.5,342.5L456.6,336L453.5,335.4L455.9,339.1L455.8,343.3L442.6,348.9L438.8,347.6L435.1,351L428.9,351.5L424.1,354.9L422.4,353.5L420,358.9L423.5,362.8L419.4,365.7L415.8,361.6L414.7,355.8L417.3,351.9L408.3,352.3L401.9,347L402.4,349.7L394.7,351.7L390.5,354.1L387.9,357.9L382.7,357.3L383.5,360.4L381,365.4L375.3,369.4L371.5,380.4L374.3,385.6L380.8,391.8L380.6,394.4L388.1,403.5L397.1,409.8L405.5,420.4L408.3,427.7L410.6,437.1L410.3,443.4L412.2,450.9L409.8,450.4L409.5,460.4L407.3,464.6L388.9,474.8L386.2,471.9L385.1,474.9L380.4,475.9L383.8,477.8L379.5,483.9L370.2,488.9L366.1,493.9L362.4,494.2L363.2,483.3L365.8,480.2L357,473.2L349.2,472.5L351.2,469.4L349.2,466.7L345.2,469.2L344.9,463.3L339.2,455.2L338.7,456.2L330,449.9L320.8,449.6L321.8,441.8L318.6,440.8L311.8,442.6L311.5,455.5L307.6,463.2L306.1,469.5L302.7,475.6L302.7,482L305.2,487.6L308.6,486.5L311.2,493.4L314.6,497.8L316.4,506.6L313.3,503.6L316.1,509.4L322.4,512.9L327.5,512.8L330.8,517L336.5,520.3L343.3,527.2L348,534.4L348.5,539.3L347.4,545.9L348.2,554.9L352.2,558.6L357.2,571L347.3,569.6L340.6,566.3L325.4,555.4L325.4,551.4L319.2,543.8L318.1,536.5L315.4,526.5L315.2,522.3L312.9,517.4L308.4,512.7L307.3,507.6L304.8,507.4L301.5,501.9L296.5,496.9L293.5,498.2L292.7,494.8L296.3,478.7L295.3,471.8L297.5,468.4L298.2,461.8L296.4,444.7L292.9,438.5L288.3,426.1L287.2,414.9L285.9,413.3L287.4,407.2L283.7,407.7L279.3,398.9L275.6,407.2L266.5,411.6L262.5,416.6L261.9,413.1L257.7,415.5L254.8,414.6L255.4,409.1L250.1,413.3L254,396L252.3,389L248.7,381.7L242.3,375.8L245.9,377.3L247.7,375L240.9,368L237.1,367.9L237.8,364.4L234.1,365.3L227,355.3L226.5,349.5L220.9,335.7L215.2,339L211.5,332.8L209.8,337.2L211.4,342.9L207.6,347.9L204.7,345.6L198.3,349.1L191.8,350.7L184.4,349.4L185.5,344.5L180.4,349.9L174.3,351.6L171.7,354.6L172.9,360.7L170.5,365.1L165.5,369.6L158,372.2L156.8,369.9L154.3,374.3L142.4,387.9L137.6,390.4L132.7,395.6L126.3,399.3L122.9,403.1L122.7,407.3L117.4,409.8L112.4,409.8L109.1,416.2L105.5,414.7L101.8,416.7L99.2,423.7L99.9,433.2L102.3,442.5L101.1,449.9L97.2,457.5L97,475.6L92.2,475.8L88,482.5L87.8,487L81.9,488.8L79.4,491.1L78,496.5L72.2,499.8L66.4,496.3L62,490.9L59.6,485L59.8,479.9L53.2,464.3L47.5,456.8L43,445.6L38.9,430.1L34.3,423.7L34.1,420.2L29.2,412.9L27.7,408.4L25.8,395.5L22.8,383.6L22,374.1L20.6,370.6L22.9,362.3L22.1,356L20,352.1L24.4,349.3L19.3,349.4L21,346.2L16.7,343.7L13.9,347.9L16.2,351.3L13.7,355.6L3.1,360.3L-2.7,359.2L-7.4,355.3L-18.4,343.6L-5.9,339.3L-3.1,334.7L-11.4,337.1L-15.9,336.1L-22.3,332.2L-24.7,327.7L-30.6,323.9L-32.6,325L-36.5,320.7L-37.9,313.9L-40,313.4L-40,-40ZM940,672.4L939.1,672L934,666.6L940,670.1L940,672.4ZM923.6,664.4L919.5,664.3L912.7,657.8L918.8,659.6ZM459,661.9L455,663.1L447.5,662.3L448.6,659.7L460.4,659.4ZM702.5,734.5L704.4,739.9L698.4,739L699.4,735.2ZM637.6,708L644.5,706L647.4,708.7L641.1,714L636.4,710.6ZM560.4,485L560.6,479.4L564,474L567.5,465.3L567.7,472.8L563.9,477.7ZM573.5,481.4L566.4,483.2L565.2,481.1L569,477.6L573.3,478.8ZM564.1,454.3L567.6,460.1L562.1,455.3L558.2,458.2L559,451ZM688.3,593L693.7,593.8L698.9,597.8L693.1,598ZM639.6,586.1L644.6,587.7L641.7,589.9L633.5,588.3ZM605.1,589.5L608.4,594.7L604,594.7L602.5,589.7ZM681.5,647L681.6,651.9L678.3,653.7L675.2,650.8L680.2,644.1ZM679.3,654.8L677.4,658.8L674.2,658.3L674.8,652.1ZM558.4,634.6L556.3,641.4L558.6,642.3L554.5,646.6L552.1,645.2L555.9,633.5ZM552.7,642.3L548.8,642.8L549.8,636.9L553.3,635.3ZM577.4,604.3L581.2,605.4L571.6,607.4L571.2,604.1ZM645.1,671.5L642.6,670.1L644.4,665.9L648.5,662L649,665.5ZM596.9,668L593.4,671L586.3,671.4L588.1,667.9ZM399,618L396.5,620.4L392.7,620.3L393.2,613.4L397.6,613.7ZM284.8,570.5L289.6,575.7L287,579.8L280.5,570.9ZM302.7,605L299.6,603.8L296.7,598.8L299.6,595.8L303.8,603.4ZM908,-40L906.9,-35.5L906.9,-35.5L899.7,-32L899.5,-35.4L904.4,-37.1L906.5,-40L908,-40ZM829,43.7L819,48.8L810.9,57.4L813.6,52L821.4,45.1ZM234.1,462.4L232.1,458.8L234.1,453.5L235.6,442.6L237.7,440.5L235.9,447.1L237,451.5Z" fill="var(--chart-fill)" stroke="var(--chart)" stroke-width="0.9" stroke-linejoin="round"/><path class="route" d="M-30 40 C 180 60, 380 120, 540.2 235.8 C 570.2 295.8, 502.5 302.2, 462.5 342.2 C 442.5 402.2, 432.2 440.2, 382.2 470.2 C 362.2 520.2, 372.3 531.7, 352.3 571.7 C 352.3 611.7, 364.5 622.3, 384.5 652.3"/><circle cx="486.2" cy="122.1" r="3.2" fill="#fff"/><text class="lbl" x="495.2" y="126.1" text-anchor="start">Beijing</text><circle cx="540.2" cy="235.8" r="3.2" fill="#fff"/><text class="lbl" x="549.2" y="239.8" text-anchor="start">Shanghai</text><circle cx="462.5" cy="342.2" r="3.2" fill="#fff"/><text class="lbl" x="471.5" y="346.2" text-anchor="start">Hong Kong</text><circle cx="373.9" cy="357" r="3.2" fill="#fff"/><text class="lbl dim" x="364.9" y="361" text-anchor="end">Hanoi</text><circle cx="316.9" cy="438.3" r="3.2" fill="#fff"/><text class="lbl" x="307.9" y="442.3" text-anchor="end">Bangkok</text><circle cx="382.2" cy="470.2" r="3.2" fill="#fff"/><text class="lbl" x="391.2" y="474.2" text-anchor="start">Ho Chi Minh City</text><circle cx="329.6" cy="552.6" r="3.2" fill="#fff"/><text class="lbl" x="320.6" y="556.6" text-anchor="end">Kuala Lumpur</text><circle cx="352.3" cy="571.7" r="3.2" fill="#fff"/><text class="lbl" x="361.3" y="575.7" text-anchor="start">Singapore</text><circle cx="384.5" cy="652.3" r="3.2" fill="#fff"/><text class="lbl" x="393.5" y="656.3" text-anchor="start">Jakarta</text><circle cx="535" cy="428.9" r="3.2" fill="#fff"/><text class="lbl dim" x="544" y="432.9" text-anchor="start">Manila</text></svg>
+    </div>
+  </div>
+</div>
+
+<section class="statement" id="firm">
+  <div class="shell">
+    <div>
+      <p class="kicker">The firm</p>
+      <h2>Focus on implementing solutions.</h2>
+    </div>
+    <div>
+      <p class="big">Most advice about Asia is written from a distance. Ours is not. Eastwind was started by a team who spent years in China and Southeast Asia running projects and operations for European companies, and who noticed that the implementation was often more valuable than the strategic advice.</p>
+      <p class="big">Key impact often came from the mundane task: the factory visit that changed the decision, the price that moved in the third meeting, the consultants embedded in the client's team to support and accelerate, or the local operational support who made the business work. <em>We built the firm around that part.</em></p>
+    </div>
+  </div>
+</section>
+
+<section id="ways" style="padding-top:0">
+  <div class="shell">
+    <p class="kicker">Two ways of working</p>
+    <h2>A project with an end date, or a function we run for you.</h2>
+    <div class="ways2">
+      <div>
+        <h3>Projects</h3>
+        <p>Defined scope, defined outcome, led by the partner you meet at the start. For decisions that need a proper answer before money is committed.</p>
+        <ul>
+          <li>Market and feasibility studies</li>
+          <li>Supplier search and qualification</li>
+          <li>Operational and commercial due diligence</li>
+          <li>Restructuring and cost programmes</li>
+          <li>Entry strategy and business case</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Managed operations</h3>
+        <p>We set up and run a function for you in the market, under our management and working as part of your organisation, so you get the capability without carrying your own entity and fixed cost.</p>
+        <ul>
+          <li>Sourcing office</li>
+          <li>Sales office and distributor management</li>
+          <li>Quality control and supplier follow-up</li>
+          <li>Interim management</li>
+          <li>Staff, payroll and administration in market</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise" style="padding-top:0">
+  <div class="shell">
+    <p class="kicker">Expertise</p>
+    <h2>Three areas, deep rather than wide.</h2>
+    <p class="lede">Everything we take on sits in one of these. If a request falls outside them we will say so and point you to someone better placed.</p>
+
+    <div class="rows">
+      <div class="row">
+        <div class="num">01</div>
+        <div>
+          <h3>Operations</h3>
+          <p class="svcp">Setting up, running or restructuring what you already have in the region. When the situation calls for it we take operational responsibility ourselves, including at management level.</p>
+        </div>
+        <div>
+          <p class="typ">Typical engagements</p>
+          <ul>
+            <li>Operational setup and management</li>
+            <li>Interim management</li>
+            <li>Organisational redesign</li>
+            <li>Cost restructuring</li>
+            <li>Process implementation</li>
+            <li>Compliance review and remediation</li>
+            <li>Quality and supplier management</li>
+            <li>Local recruitment and training</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="num">02</div>
+        <div>
+          <h3>Sourcing and supply chain</h3>
+          <p class="svcp">Better suppliers at a lower total cost, verified in person. A supplier that has not been visited has not been qualified.</p>
+        </div>
+        <div>
+          <p class="typ">Typical engagements</p>
+          <ul>
+            <li>Supply market analysis</li>
+            <li>Supplier identification and screening</li>
+            <li>Site visits and capability audits</li>
+            <li>RFQ management and negotiation</li>
+            <li>Total cost and spend analysis</li>
+            <li>Sourcing office setup</li>
+            <li>Production from prototype to series</li>
+            <li>Logistics setup</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="num">03</div>
+        <div>
+          <h3>Market expansion</h3>
+          <p class="svcp">Entering a market for the first time, or growing where you already sell. From whether the product fits at all through to a channel that is actually moving product.</p>
+        </div>
+        <div>
+          <p class="typ">Typical engagements</p>
+          <ul>
+            <li>Market and feasibility studies</li>
+            <li>Product suitability assessment</li>
+            <li>Entry strategy and business case</li>
+            <li>Legal entity setup</li>
+            <li>Distributor and channel development</li>
+            <li>Marketplace setup and management</li>
+            <li>Sales office service</li>
+            <li>Partner and joint venture search</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="markets" id="markets">
+  <div class="shell">
+    <div>
+      <p class="kicker">Markets</p>
+      <h2>Where we work.</h2>
+      <p class="lede">Greater China and the main Southeast Asian economies, with people on the ground in each market we take an engagement in.</p>
+      <div class="mlist">
+        <div>
+          <h4>Greater China</h4>
+          <ul><li>Shanghai and the Yangtze delta</li><li>Beijing</li><li>Guangdong</li><li>Hong Kong</li></ul>
+        </div>
+        <div>
+          <h4>Southeast Asia</h4>
+          <ul><li>Vietnam</li><li>Thailand</li><li>Malaysia and Singapore</li><li>Indonesia</li><li>Philippines</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="chart2" aria-hidden="true">
+      <svg viewBox="0 0 900 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of East and Southeast Asia"><path d="M-8,800L-8,586L-8,340L-8,48L-8,-40M99,800L99,586L99,340L99,48L99,-40M205,800L205,586L205,340L205,48L205,-40M312,800L312,586L312,340L312,48L312,-40M418,800L418,586L418,340L418,48L418,-40M525,800L525,586L525,340L525,48L525,-40M631,800L631,586L631,340L631,48L631,-40M737,800L737,586L737,340L737,48L737,-40M844,800L844,586L844,340L844,48L844,-40M-40,693L-34,693L-8,693L19,693L45,693L72,693L99,693L125,693L152,693L179,693L205,693L232,693L258,693L285,693L312,693L338,693L365,693L391,693L418,693L445,693L471,693L498,693L525,693L551,693L578,693L604,693L631,693L658,693L684,693L711,693L737,693L764,693L791,693L817,693L844,693L871,693L897,693L924,693L940,693M-40,586L-34,586L-8,586L19,586L45,586L72,586L99,586L125,586L152,586L179,586L205,586L232,586L258,586L285,586L312,586L338,586L365,586L391,586L418,586L445,586L471,586L498,586L525,586L551,586L578,586L604,586L631,586L658,586L684,586L711,586L737,586L764,586L791,586L817,586L844,586L871,586L897,586L924,586L940,586M-40,479L-34,479L-8,479L19,479L45,479L72,479L99,479L125,479L152,479L179,479L205,479L232,479L258,479L285,479L312,479L338,479L365,479L391,479L418,479L445,479L471,479L498,479L525,479L551,479L578,479L604,479L631,479L658,479L684,479L711,479L737,479L764,479L791,479L817,479L844,479L871,479L897,479L924,479L940,479M-40,369L-34,369L-8,369L19,369L45,369L72,369L99,369L125,369L152,369L179,369L205,369L232,369L258,369L285,369L312,369L338,369L365,369L391,369L418,369L445,369L471,369L498,369L525,369L551,369L578,369L604,369L631,369L658,369L684,369L711,369L737,369L764,369L791,369L817,369L844,369L871,369L897,369L924,369L940,369M-40,251L-34,251L-8,251L19,251L45,251L72,251L99,251L125,251L152,251L179,251L205,251L232,251L258,251L285,251L312,251L338,251L365,251L391,251L418,251L445,251L471,251L498,251L525,251L551,251L578,251L604,251L631,251L658,251L684,251L711,251L737,251L764,251L791,251L817,251L844,251L871,251L897,251L924,251L940,251M-40,121L-34,121L-8,121L19,121L45,121L72,121L99,121L125,121L152,121L179,121L205,121L232,121L258,121L285,121L312,121L338,121L365,121L391,121L418,121L445,121L471,121L498,121L525,121L551,121L578,121L604,121L631,121L658,121L684,121L711,121L737,121L764,121L791,121L817,121L844,121L871,121L897,121L924,121L940,121M-40,-30L-34,-30L-8,-30L19,-30L45,-30L72,-30L99,-30L125,-30L152,-30L179,-30L205,-30L232,-30L258,-30L285,-30L312,-30L338,-30L365,-30L391,-30L418,-30L445,-30L471,-30L498,-30L525,-30L551,-30L578,-30L604,-30L631,-30L658,-30L684,-30L711,-30L737,-30L764,-30L791,-30L817,-30L844,-30L871,-30L897,-30L924,-30L940,-30" fill="none" stroke="var(--grat)" stroke-width="0.7"/><path d="M532.9,800L533.9,799.7L540.4,793.4L544.1,786.3L549.6,781.4L547.5,773.3L556.2,763.6L562.5,775.6L564.8,768.3L561.7,764.1L564.2,760.8L565.6,762.9L572,762.4L573.3,760L571.8,753.1L578.5,748L581.5,749L579.7,744.5L583.9,742L587.2,743.4L590.4,736.7L594.5,738.4L598,733.8L606.2,738.8L611.8,744.9L611.5,748.1L614.8,745.3L623.2,746.2L627.1,749.2L629.4,745.8L624.4,741L627.9,736.4L629.3,732L633.7,729L632.8,725.2L637.6,719.5L644.7,715.5L646.3,717.8L655,716.8L659,715.2L659.5,711L650.3,706.9L655.1,706.1L659.5,709.4L663.2,708.9L664.9,711.6L672.6,713L676.1,714.9L681.3,714.6L686.6,717.2L692.6,713.8L697.6,719.5L700.6,714.3L705,718.6L700.6,723.4L699.8,728.2L694.1,729L693.6,738.3L688.5,745L689.9,747.7L713,761.3L718.8,766.7L726.9,768.7L729.4,773.5L737.8,777.6L746.3,774.4L750.4,765.9L754.8,748.3L753.1,734.4L754.6,725.1L757.9,723.5L755.4,718.6L758.2,713.7L760.5,703.4L763.6,700.8L767.7,707.3L768,712.9L771.3,714.3L771.3,714.3L770.6,718.1L773.7,721.8L775.6,730.5L775.2,733.8L777.4,740.5L779.6,741.7L785.1,739.2L786.9,742.1L793.8,747L793.6,752.9L795.6,759.3L795.2,763.2L800.3,770.6L802.7,776.9L801.6,782.9L804.9,787.2L806.4,793.1L816.4,796.5L819.8,800L532.9,800ZM606.8,577.1L608.4,577.2L612,571.2L617,569.4L617.2,574.3L612.5,578.3L619.3,583.8L609.5,581.1L609.5,588.7L612.4,593.9L610.2,593.6L606.4,588.7L605.5,577.1L603.5,572.8L605.8,566.5L610.1,562.7L608.5,566.6L609.8,571.9L606,575.3ZM495.9,495.9L496.3,493L503.5,487L514.1,475.3L519.2,464.5L521.2,473.1L515.9,478.4L511.6,480L507.9,487.1ZM551.1,461.6L558.2,462.4L554,470.2L545.7,474.1L546.9,461.3L545.4,458.5ZM557.9,489.2L551.8,484.7L550.8,479.5L554.9,478.1L554.5,473.6L556.3,469.5L559.2,468.3L562.5,470.6L558.2,480.6L559.9,486.9ZM573.2,464.5L577,464.2L577.9,470.6L580.5,476.2L575.4,477.3L575.6,471.7L571.8,469.1L570.6,462.5ZM580.3,451.6L583.5,455.3L583,461.8L585.3,466.5L580.2,466.7L576.5,459.8L571.8,455.7L570.2,451.2ZM532,441.3L537.3,441.8L540.7,445L540.9,450.4L537.7,455L534.8,452.5L532.7,446.8L528.8,440.8ZM907.4,657.4L904.8,659.3L900.8,657.8L899.3,653.4L894.8,649.8L894.3,644.2L898.2,646ZM875.5,636.8L872.4,634L871.6,628.7L867.3,623.4L852.7,615L852.7,613.5L867.1,622.4L876,629.8L877.3,632.5ZM721.9,674.5L712.8,676L716.3,667.7L719.3,665.5L724.3,665L726.7,668.3ZM628.4,616.6L635,617.9L640.1,624.1L639.6,627.2L629.3,621.5L625.3,622.9L617.7,621.3L614.2,622.5L608.4,620.4L611.8,616.6L624.9,615.8ZM597.6,619L601.5,622.2L601.5,624.8L595.7,626.8L590.7,624.5L588.7,619.9ZM554.2,678.1L542.1,681.2L535.5,681.6L530.4,680.2L523.5,680.8L523.7,676.3L531,674.1L540.5,677.8L545.5,676.4L548.6,678.3L554.9,674.8ZM524.7,686.4L533.4,693.5L529.2,696.3L520.3,690.7L514.8,689.9L515.8,686.5ZM505.8,675L513.7,675.2L515.3,678.7L493.2,683.4L490.3,682.4L490.8,677.3L494.3,675.5L498.6,676.1L501.2,679.2L505.7,677.9L500.6,673.2ZM488.7,678.1L485.9,681.6L482.8,679.6L482.6,676.3L486.2,673.7L489.7,675.7ZM476.1,673.2L478.8,675.9L473.6,680.4L465.7,672.8ZM375.9,603.9L379.4,612.3L384.2,613.5L382.6,618.8L375.4,616.2L373.2,609.3L366.3,607.8L371,602.4ZM864.3,631.9L869.5,632.4L869.5,636.5L865.4,639.4L866.7,643.2L860.1,645.3L857,649.2L848.5,653.1L840.2,653.2L826.9,647.6L826.3,645.2L835.9,645.5L845,644L847.1,645.1L854,643.9L858,639L861.7,638.1L860.9,630.9ZM602.2,676.1L592.5,681.8L582.1,685.3L571.6,694.7L563.3,696.5L564,688.9L566.9,686.3L573.2,684L579.7,678.5L586.3,676.8L595,676.5L598.7,675ZM588.5,486.4L591.8,491.5L594.6,508.7L590.5,513L590.4,518.8L586.5,507.8L582,513.6L584.9,522.3L580.8,526L580.6,521.7L578.1,523.5L569.4,519.6L567,512.9L569.3,507.1L566.8,504.2L561.7,502.7L560.6,507L557.5,503.9L551.1,504.2L547.3,511.9L545.4,511.7L547.2,502.7L549.4,500.3L555.5,499L561.1,493.1L565.5,496L564.5,500L569.2,498.2L571.9,494.1L574.9,494.6L576.4,490.2L583.1,489.7L583.3,481.7ZM536.2,384.3L544.2,387.9L549,386.7L547.4,395L551.3,401L547.3,411.4L541.5,414.2L539.3,421L542.6,427.4L543.3,433.7L546.7,436.1L551,432L554.9,432.8L558.9,438.3L559.9,434.9L565.6,437.7L562.3,439.4L564.8,445.3L568.6,446.1L567.7,451.2L566.2,447.1L559.8,446L558.2,441.6L550.8,436.8L553,443.7L543.4,436.2L537.3,439.5L531.3,437.7L531.1,433.5L534.5,428.4L530.8,425.8L529.2,430.6L525.4,426.2L522.7,409.9L526.2,413L528.7,411L528.3,395.3L530.9,385.5ZM668,593.8L673.3,594L676.3,600.6L674.7,604.4L675.2,609.5L678.5,616.3L680.3,613.1L684.6,621.6L689.4,621.7L697.4,613.6L699,610.3L707.3,607.7L706.8,605.7L714.1,601.9L723.1,605.2L735.2,611.1L744.1,612.1L761,618.9L774.8,622.7L780.2,626.4L785.6,627.2L791.6,632.5L794.3,632.8L798.9,637.5L798.6,643.7L812.3,649.2L816,649.6L820.5,653.5L820.6,657.6L813.3,657.8L811.6,660.1L814,664.9L824,672.7L825.3,677.5L828.8,682.9L835.9,683.1L835.4,686.7L843.6,689.4L842.6,693.2L851,695.9L850.8,698.7L847.3,700.2L841.3,696.9L820.2,693.9L812.2,686.5L811.6,683L808.7,682.6L801.7,672.4L790.4,669.4L785.5,666.9L782.5,669L779,668L779.4,671L775.3,671.4L775.9,673.7L770.4,674.9L773.3,681.9L765.6,685.9L761.2,684.2L749.5,684.7L745.8,682L736.8,672.6L725.3,673.1L727.8,667.1L724.1,663.5L727.3,663L722.5,660.1L725.4,659.3L720.8,653.8L716.8,644.4L706.4,638.6L694.6,634.4L686.3,633.5L681.6,630.8L681.1,628.2L673.3,626.8L669.9,621.9L665.6,629.4L662.6,629.7L660.3,625.6L660.3,621.2L652,615.8L654.7,614.6L660,615.8L665,612.1L669.4,613.2L672.6,611.6L672.8,608.5L662.5,610.3L655.5,610L652.5,607.3L651.5,602.7L641.6,601.3L644.4,595.2L650.2,593.6L653.6,590.9L658.9,589.9ZM576.6,575.5L571.6,581.1L564.5,582.8L557.4,580.9L535.3,581.4L529.4,580.7L524.7,588.2L525.6,593L531.6,600.7L535.5,601.1L540.7,595.2L545.5,596L548.8,594.1L560.5,593L560.5,596.8L554.4,596.4L551.2,600.5L542.8,605.9L538.9,606.8L544.2,610.9L550.1,620.2L548.5,624.7L555.2,629.9L555.4,632.5L548,634L544.9,637.8L540.3,634.9L541.8,629.7L534.2,624L535.7,615.4L531.5,614.5L527.2,618.6L529.2,625.6L528.8,636.5L527.5,641L529.1,645.7L521.5,646.8L517.9,643.9L520.4,633.2L520.5,629.1L518.3,623.1L512.5,622.3L511.6,615.5L514.8,612.5L517.3,606.6L517.2,601.1L521.4,593.4L522.9,595.3L521.6,587L525.1,578.7L528,575.6L530.9,577L534.2,572.4L541.5,574.7L550.5,575.3L555.3,577.1L565.5,577.2L570,575.2L577.6,568L580.2,570.1ZM390.1,650.2L393.2,652.4L399.9,652.9L404,658.6L422.6,660.2L425.9,655.2L430.3,657.3L434.5,657L440.3,659.7L445.1,660L447.8,666.7L452.6,668.5L461.4,667.6L465.4,670.4L464.8,675.9L466.9,679.8L452.7,674.6L446.6,675.9L434.1,674.8L424.5,673.2L416.5,669.7L404.7,668L401.6,669.4L395.9,668.6L389.2,665.9L380.3,664.8L381,661.4L370,658.5L376.3,649.2L384.3,651.1L386.6,649.1ZM274.3,530.3L284.5,530.3L289.3,534.1L292.9,539L293.6,542.5L308.8,552.2L316.5,562.1L321.1,565.3L322.7,562.1L327.3,568.1L330.6,568.8L337.9,577.8L347.1,580.6L351.9,585.6L348.1,588.1L348.1,591.8L351.2,595.5L358,597.2L359.7,605.5L363.2,608.4L362,613.5L365.1,611.2L371,612.6L375.9,619.2L373.8,624.6L374.3,639.5L373.5,646.6L371.4,647.9L368.6,645.3L365.7,647.4L361,645L360.6,649.1L352.4,640.2L338.6,630.3L334.2,624.4L328.4,619.8L320.6,608.9L320.7,606.7L314.9,594.9L307.3,585L302.6,582.4L298.8,570.2L296.3,565.8L287.1,561L286,555.8L279.3,548L273.7,545.4L263.6,535.4L260.6,529.8L260.8,526.8L265.1,526.3L270.4,529.7ZM490.5,514.7L494,511.7L499.5,517L499.2,522.7L503.3,521.5L509.6,526.5L516.3,528.4L515.3,531.7L506,532.9L505.2,534.6L509.6,538.6L503.3,540.8L500.5,539.9L497.5,542.7L500.9,546.8L494.4,547.3L496.3,552.1L499.1,553.5L503.9,561.4L501,564.5L504.1,568L513.7,575.6L508.9,577.4L502.3,574.4L498.1,583.6L497.5,589.5L498.7,593.8L495.1,596L484.9,605.1L486.4,605.1L487.6,612.8L485.7,613L484.7,619.4L481.5,624.4L468,630.5L466.2,622.1L461.5,621L458.5,622.9L450.4,617.3L449.7,620L445.7,622.3L442.4,621.5L437.5,623.7L437.5,618.7L432.6,617.3L428,618.8L424.2,616.9L421.3,617.9L418.3,601L415.8,596.9L410.3,593.9L408.8,590.8L410.2,585.8L406.8,582.3L406.4,577.6L408.2,570.2L414.1,564.5L417.9,567.8L421.8,567.8L429.8,571.2L431.3,560.2L436.5,555.7L450.5,552L459.8,540.9L460.5,537.7L469.6,533.4L475.3,533.5L475.8,528.4L479.8,527.1L489.9,511.6ZM777.1,-40L778.1,-35.1L783,-19.1L786.7,-11L781.4,-17.4L777.2,-19.1L770.5,-17.3L764.9,0.9L764.7,6.2L769.5,14.3L771.7,21L774.6,21.7L775.6,27.7L774,32.8L772.4,24.7L764.9,22.5L759.6,34.6L756.9,26.3L759.1,15.6L758.4,8.6L760.7,1.8L757.3,-10L760.3,-23.3L759.5,-39L759.7,-40L777.1,-40ZM778.2,61.6L788.5,64.3L794.3,58.4L791.8,66.9L796.1,75.5L786.7,78.8L782.1,78.4L775.6,83.9L771.9,92.5L757.2,84.2L748,87.6L742.6,84.5L740.8,87.7L749.7,95.3L744.5,95.1L739,100.7L738.6,93.8L735.5,86.9L736.3,83.2L742.6,77.3L741.6,73.6L751.3,75.2L755,63.1L756.4,52.7L754.3,46.1L758.1,40.7L766.2,51.2ZM750.5,101.4L752.9,101L753,112.2L756.6,116.7L758.7,123.6L757.7,133L755.1,134.9L753.1,142.6L749.3,143.5L747.3,148.8L748.5,155.3L747.8,161.5L744.1,168.1L744.1,174L746.8,178.4L742.3,181.2L741.3,185.5L736.6,189.2L735.6,184L738.4,180.8L735.7,179.3L733.6,186L729.5,184.2L725.7,192.7L722.3,186.7L718.2,193.1L704.3,190.4L704,187.1L700.5,192L704,196.6L698.4,198.5L694,206.4L689,206.5L686.1,202.1L685.3,197.1L688.3,194.3L681.5,190.9L664.4,196.9L654.8,197.9L653.8,202.9L649.5,200.1L640.8,201.1L641.7,195.7L645.4,195.5L662.1,181.2L666.9,181.9L675.9,180.8L686.1,178.1L691.5,181.3L695.9,177.8L695,174.9L702.3,165L703.8,156.4L708.9,154.6L704.7,159.2L705.7,163.7L719.6,158.6L725.6,150.2L731.1,146.2L737.8,128.9L738,124.2L734.7,121.8L737.6,116.3L736.7,112.4L740.4,108.9L741.6,103.5L744.7,108.2L749.4,108.4L750.2,103.3L746,104.8L747.4,99.6ZM677.4,197.5L680.3,197.9L681.5,203.1L677.6,205.8L675.5,210.4L669.7,207.1L666,209L662.7,215.6L659.1,216.6L656.7,208.1L660.6,200.9L669.1,200.6L674.4,196.2ZM643.5,205.9L647.8,205.2L647.3,210.1L651.2,210.3L652,215.5L649.4,218.7L645.2,233.6L638.3,238.5L639.4,235.3L638,229.7L637.3,236.4L633.1,235L634.4,231.2L633.1,225L637.8,218.4L635,212.4L629.1,217L626.5,210.5L634.9,205.5L636.2,202.9L641.1,202.4ZM535.3,338.8L533.5,346.8L528,339.7L525.3,332.6L525.9,326.8L535.6,310.7L541.5,307.8L545.1,311.4L539.4,332.4ZM427.5,368.8L428.8,372.6L424.2,378.1L422.9,382.8L412.9,388.8L404.2,385.2L404.2,376.2L410.7,369.8L425.3,367.2ZM98.5,481.1L101.4,481.3L106.2,485.9L113.3,496L113.9,499.4L118.6,508.3L118.5,512.4L116.1,517.5L106.4,522.3L99.7,520.5L97.2,513.2L95.5,499.9L96.6,500.1L99.4,488.9ZM742.6,-40L742.5,-39.5L743,-23.8L739.3,-6.3L730.8,3.8L726.8,11.8L722.4,16.9L719.7,24.9L712.8,36L703.4,45.9L693.5,57.8L685.6,70.4L670.5,80.5L664.6,82.5L655.5,79.8L655.6,73.5L650.9,76.7L650.1,74.3L643.3,83.5L638.5,83.1L638.8,87.8L635.8,88.2L628.4,96.6L627.9,108.7L612.9,120.2L605.1,123.8L603.3,131.7L607.4,133.4L613.7,139.7L616.3,145.8L623.9,157.9L625.4,165L624.7,174.1L626.5,174.1L622.6,185.5L615.2,186.6L614.4,189.6L606.6,188.5L602.5,194.8L601.7,191L597.9,195.1L593.8,196.3L591.2,192.1L594,191.8L591.5,185.9L593.6,179.4L596,177.8L593.6,165.6L590.7,163.3L594.6,161.3L598.6,162.8L594.4,151.9L589.7,151.6L585.9,148.3L581.6,151.8L577.6,149L580.4,147.3L574.5,146.4L581,139.1L579.4,136.3L581.6,127.3L575.4,124.1L573.9,126.1L570.8,120.6L568.2,122.9L556.8,125.2L549.4,129.5L542.1,136.4L536.9,138.2L536.3,135.6L542.4,133L543.9,129.2L538.1,129.2L540.7,122.9L543.7,121.4L548.7,113.2L544.3,108.9L537,108.1L529.6,117.5L520.2,122.1L512.9,132.2L506.4,133.6L500.9,132.7L498.5,139.6L503.4,145.6L513.2,147.5L514.8,152.1L513.4,157.1L518.7,159.9L532.5,150.4L542,155.4L546.4,154.5L552.2,155.8L551.3,162.3L545.1,162.1L535,166.9L531.8,172.6L525.1,176.6L518.5,183.9L516,191.1L527.4,197.3L529.9,205.4L533.8,213.4L533.6,217.8L539.5,221.5L544.4,229.9L532.1,226.4L542.2,234.7L544.5,239.7L540.8,240.6L533.3,246.7L529.3,246.2L531.3,249.4L536.9,247.3L546.7,252.6L540.6,257.3L545.2,255.8L544.9,261.6L540.2,267.6L541.6,270.9L536.2,271.9L527.5,286.2L525.5,291.3L520.1,289.9L523.2,295.3L516.7,299.6L520.5,299.2L520.2,306.7L515.4,306.2L512.9,311.9L509.2,316L504.2,315.4L503.8,319.9L488.6,330.3L486.9,335L484.6,334.6L476.6,337.6L473.4,336.5L469.7,338.8L464.3,339.1L463.5,342.5L456.6,336L453.5,335.4L455.9,339.1L455.8,343.3L442.6,348.9L438.8,347.6L435.1,351L428.9,351.5L424.1,354.9L422.4,353.5L420,358.9L423.5,362.8L419.4,365.7L415.8,361.6L414.7,355.8L417.3,351.9L408.3,352.3L401.9,347L402.4,349.7L394.7,351.7L390.5,354.1L387.9,357.9L382.7,357.3L383.5,360.4L381,365.4L375.3,369.4L371.5,380.4L374.3,385.6L380.8,391.8L380.6,394.4L388.1,403.5L397.1,409.8L405.5,420.4L408.3,427.7L410.6,437.1L410.3,443.4L412.2,450.9L409.8,450.4L409.5,460.4L407.3,464.6L388.9,474.8L386.2,471.9L385.1,474.9L380.4,475.9L383.8,477.8L379.5,483.9L370.2,488.9L366.1,493.9L362.4,494.2L363.2,483.3L365.8,480.2L357,473.2L349.2,472.5L351.2,469.4L349.2,466.7L345.2,469.2L344.9,463.3L339.2,455.2L338.7,456.2L330,449.9L320.8,449.6L321.8,441.8L318.6,440.8L311.8,442.6L311.5,455.5L307.6,463.2L306.1,469.5L302.7,475.6L302.7,482L305.2,487.6L308.6,486.5L311.2,493.4L314.6,497.8L316.4,506.6L313.3,503.6L316.1,509.4L322.4,512.9L327.5,512.8L330.8,517L336.5,520.3L343.3,527.2L348,534.4L348.5,539.3L347.4,545.9L348.2,554.9L352.2,558.6L357.2,571L347.3,569.6L340.6,566.3L325.4,555.4L325.4,551.4L319.2,543.8L318.1,536.5L315.4,526.5L315.2,522.3L312.9,517.4L308.4,512.7L307.3,507.6L304.8,507.4L301.5,501.9L296.5,496.9L293.5,498.2L292.7,494.8L296.3,478.7L295.3,471.8L297.5,468.4L298.2,461.8L296.4,444.7L292.9,438.5L288.3,426.1L287.2,414.9L285.9,413.3L287.4,407.2L283.7,407.7L279.3,398.9L275.6,407.2L266.5,411.6L262.5,416.6L261.9,413.1L257.7,415.5L254.8,414.6L255.4,409.1L250.1,413.3L254,396L252.3,389L248.7,381.7L242.3,375.8L245.9,377.3L247.7,375L240.9,368L237.1,367.9L237.8,364.4L234.1,365.3L227,355.3L226.5,349.5L220.9,335.7L215.2,339L211.5,332.8L209.8,337.2L211.4,342.9L207.6,347.9L204.7,345.6L198.3,349.1L191.8,350.7L184.4,349.4L185.5,344.5L180.4,349.9L174.3,351.6L171.7,354.6L172.9,360.7L170.5,365.1L165.5,369.6L158,372.2L156.8,369.9L154.3,374.3L142.4,387.9L137.6,390.4L132.7,395.6L126.3,399.3L122.9,403.1L122.7,407.3L117.4,409.8L112.4,409.8L109.1,416.2L105.5,414.7L101.8,416.7L99.2,423.7L99.9,433.2L102.3,442.5L101.1,449.9L97.2,457.5L97,475.6L92.2,475.8L88,482.5L87.8,487L81.9,488.8L79.4,491.1L78,496.5L72.2,499.8L66.4,496.3L62,490.9L59.6,485L59.8,479.9L53.2,464.3L47.5,456.8L43,445.6L38.9,430.1L34.3,423.7L34.1,420.2L29.2,412.9L27.7,408.4L25.8,395.5L22.8,383.6L22,374.1L20.6,370.6L22.9,362.3L22.1,356L20,352.1L24.4,349.3L19.3,349.4L21,346.2L16.7,343.7L13.9,347.9L16.2,351.3L13.7,355.6L3.1,360.3L-2.7,359.2L-7.4,355.3L-18.4,343.6L-5.9,339.3L-3.1,334.7L-11.4,337.1L-15.9,336.1L-22.3,332.2L-24.7,327.7L-30.6,323.9L-32.6,325L-36.5,320.7L-37.9,313.9L-40,313.4L-40,-40ZM940,672.4L939.1,672L934,666.6L940,670.1L940,672.4ZM923.6,664.4L919.5,664.3L912.7,657.8L918.8,659.6ZM459,661.9L455,663.1L447.5,662.3L448.6,659.7L460.4,659.4ZM702.5,734.5L704.4,739.9L698.4,739L699.4,735.2ZM637.6,708L644.5,706L647.4,708.7L641.1,714L636.4,710.6ZM560.4,485L560.6,479.4L564,474L567.5,465.3L567.7,472.8L563.9,477.7ZM573.5,481.4L566.4,483.2L565.2,481.1L569,477.6L573.3,478.8ZM564.1,454.3L567.6,460.1L562.1,455.3L558.2,458.2L559,451ZM688.3,593L693.7,593.8L698.9,597.8L693.1,598ZM639.6,586.1L644.6,587.7L641.7,589.9L633.5,588.3ZM605.1,589.5L608.4,594.7L604,594.7L602.5,589.7ZM681.5,647L681.6,651.9L678.3,653.7L675.2,650.8L680.2,644.1ZM679.3,654.8L677.4,658.8L674.2,658.3L674.8,652.1ZM558.4,634.6L556.3,641.4L558.6,642.3L554.5,646.6L552.1,645.2L555.9,633.5ZM552.7,642.3L548.8,642.8L549.8,636.9L553.3,635.3ZM577.4,604.3L581.2,605.4L571.6,607.4L571.2,604.1ZM645.1,671.5L642.6,670.1L644.4,665.9L648.5,662L649,665.5ZM596.9,668L593.4,671L586.3,671.4L588.1,667.9ZM399,618L396.5,620.4L392.7,620.3L393.2,613.4L397.6,613.7ZM284.8,570.5L289.6,575.7L287,579.8L280.5,570.9ZM302.7,605L299.6,603.8L296.7,598.8L299.6,595.8L303.8,603.4ZM908,-40L906.9,-35.5L906.9,-35.5L899.7,-32L899.5,-35.4L904.4,-37.1L906.5,-40L908,-40ZM829,43.7L819,48.8L810.9,57.4L813.6,52L821.4,45.1ZM234.1,462.4L232.1,458.8L234.1,453.5L235.6,442.6L237.7,440.5L235.9,447.1L237,451.5Z" fill="var(--chart-fill)" stroke="var(--chart)" stroke-width="0.9" stroke-linejoin="round"/><circle cx="486.2" cy="122.1" r="2.6" fill="#fff"/><text class="lbl" x="495.2" y="126.1" text-anchor="start">Beijing</text><circle cx="540.2" cy="235.8" r="2.6" fill="#fff"/><text class="lbl" x="549.2" y="239.8" text-anchor="start">Shanghai</text><circle cx="462.5" cy="342.2" r="2.6" fill="#fff"/><text class="lbl" x="471.5" y="346.2" text-anchor="start">Hong Kong</text><circle cx="373.9" cy="357" r="2.6" fill="#fff"/><text class="lbl dim" x="364.9" y="361" text-anchor="end">Hanoi</text><circle cx="316.9" cy="438.3" r="2.6" fill="#fff"/><text class="lbl" x="307.9" y="442.3" text-anchor="end">Bangkok</text><circle cx="382.2" cy="470.2" r="2.6" fill="#fff"/><text class="lbl" x="391.2" y="474.2" text-anchor="start">Ho Chi Minh City</text><circle cx="329.6" cy="552.6" r="2.6" fill="#fff"/><text class="lbl" x="320.6" y="556.6" text-anchor="end">Kuala Lumpur</text><circle cx="352.3" cy="571.7" r="2.6" fill="#fff"/><text class="lbl" x="361.3" y="575.7" text-anchor="start">Singapore</text><circle cx="384.5" cy="652.3" r="2.6" fill="#fff"/><text class="lbl" x="393.5" y="656.3" text-anchor="start">Jakarta</text><circle cx="535" cy="428.9" r="2.6" fill="#fff"/><text class="lbl dim" x="544" y="432.9" text-anchor="start">Manila</text></svg>
+    </div>
+  </div>
+</section>
+
+
+<section id="work">
+  <div class="shell">
+    <p class="kicker">Work</p>
+    <h2>The shape of the problems we are called in for.</h2>
+    <p class="lede">Six engagements, anonymised. Each started as a question and ended as something running.</p>
+    <div class="cases">
+      <div class="case">
+        <div>
+          <p class="who">Lift manufacturer</p>
+          <p class="where">Supplier cost programme · China</p>
+        </div>
+        <div>
+          <p>Component costs had been rising for over a year and the internal cost-down effort had stalled for lack of hands. We broke the main assemblies down to component level, benchmarked the cost drivers, and renegotiated with the existing suppliers on that basis. Suppliers were then assessed on site to decide which to keep, consolidate or replace, and alternative suppliers were identified and qualified in a second country.</p>
+          <p class="out"><b>Outcome</b> Fact-based prices with the current base, a consolidated supplier list, and a qualified alternative for the highest-exposure components.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div>
+          <p class="who">Lift manufacturer</p>
+          <p class="where">Supply chain redesign for a new product line</p>
+        </div>
+        <div>
+          <p>A shift from steel to standardised aluminium doors changed what the supply chain had to do. We mapped the existing chain step by step, from profile pressing through cutting, assembly and coating to delivery, built the volume forecast for three years, ran an RFI and RFQ with candidate suppliers, and set out which steps to outsource and which to keep in-house.</p>
+          <p class="out"><b>Outcome</b> A costed supply chain recommendation with a supplier shortlist and quotations, ready to decide on.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div>
+          <p class="who">Nordic IT reseller</p>
+          <p class="where">Embedded supplier compliance manager · China</p>
+        </div>
+        <div>
+          <p>A growing private-label range built on Chinese suppliers, and nobody to own supplier compliance. We placed one of our people in the role: setting the audit schedule, attending every initial audit and re-audit, approving root-cause analyses and corrective actions, running supplier training, and handling code of conduct sign-off and conflict minerals due diligence, with a quarterly report back to the client.</p>
+          <p class="out"><b>Outcome</b> A supplier compliance programme that runs, owned by someone the client did not have to recruit.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div>
+          <p class="who">Private equity buyer</p>
+          <p class="where">Supply base due diligence · China</p>
+        </div>
+        <div>
+          <p>The target's production sat with three contract manufacturers. We established legal status, ownership and actual production capability for each, through interviews and on-site inspection rather than filings.</p>
+          <p class="out"><b>Outcome</b> An independent view of the investment case and of the third-party manufacturing risk, which changed where the buyer focused before signing.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div>
+          <p class="who">Automotive supplier</p>
+          <p class="where">Interim management · China</p>
+        </div>
+        <div>
+          <p>Compliance problems surfaced in a pre-acquisition due diligence, but nobody could say where they sat. We ran the risk assessment, found the issues across management, finance, sales and purchasing, then stepped in as interim management and restructured the organisation over eighteen months.</p>
+          <p class="out"><b>Outcome</b> Purchasing costs down a quarter, sales margin up ten points, full compliance, acquisition completed.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div>
+          <p class="who">Global trading company</p>
+          <p class="where">Market study and target search · Vietnam</p>
+        </div>
+        <div>
+          <p>The client wanted to enter Vietnamese food retail by acquisition. We sized the market, mapped the players, set screening criteria, approached targets directly to test their appetite, and proposed a deal structure for the shortlist.</p>
+          <p class="out"><b>Outcome</b> A live negotiation with an identified target, with the client supported through it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="shell">
+    <p class="kicker">Contact</p>
+    <p class="lede big">Tell us what challenges you are facing. A first conversation will settle whether we can support you, and in either case hopefully give you some new perspectives on the region.</p>
+    <form class="cform" id="cform" action="https://formsubmit.co/alexander@eastwindadvisory.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Message from eastwindadvisory.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <div class="f">
+        <label for="c-email">Your email</label>
+        <input id="c-email" name="email" type="email" required autocomplete="email" placeholder="name@company.com">
+      </div>
+      <div class="f">
+        <label for="c-msg">Message</label>
+        <textarea id="c-msg" name="message" required rows="6" placeholder="What is going on, and where."></textarea>
+      </div>
+      <div class="f-actions">
+        <button type="submit" id="c-send">Send</button>
+        <p class="f-note" id="c-note" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="shell frow">
+    <span class="wordmark"><svg class="mk" viewBox="0 0 1044 1038" aria-hidden="true" focusable="false"><path d="M58.1 22.6 L985.9 22.6 L1044.0 71.0 L985.9 119.4 L58.1 119.4 L0.0 71.0 Z M58.1 641.6 L985.9 641.6 L1044.0 690.0 L985.9 738.4 L58.1 738.4 L0.0 690.0 Z M466.0 22.6 L579.0 22.6 L579.0 1038.0 L466.0 1038.0 Z M181.5 302.0 L294.5 302.0 L294.5 690.0 L181.5 690.0 Z M751.5 302.0 L864.5 302.0 L864.5 690.0 L751.5 690.0 Z M181.5 430.6 L864.5 430.6 L864.5 527.4 L181.5 527.4 Z M579.0 690.0 L750.8 690.0 L1037.4 940.3 L963.1 1025.4 Z M81.9 1025.4 L7.6 940.3 L294.2 690.0 L466.0 690.0 Z"/></svg><span>Eastwind</span></span>
+    <span>Eastwind. Operations, sourcing and growth in Asia.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('cform'); if(!f) return;
+  var note=document.getElementById('c-note'), btn=document.getElementById('c-send');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=f.email.value.trim(), msg=f.message.value.trim();
+    note.className='f-note';
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ note.textContent='Please enter a valid email address.'; note.className='f-note err'; f.email.focus(); return; }
+    if(msg.length<10){ note.textContent='Please write a few more words.'; note.className='f-note err'; f.message.focus(); return; }
+    btn.disabled=true; note.textContent='Sending…';
+    var data={email:email, message:msg, _subject:'Message from eastwindadvisory.com', _template:'table'};
+    fetch('https://formsubmit.co/ajax/alexander@eastwindadvisory.com',{method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data)})
+    .then(function(r){ if(!r.ok) throw new Error('bad'); return r.json(); })
+    .then(function(){ note.textContent='Thank you. We will come back to you shortly.'; f.reset(); })
+    .catch(function(){ note.textContent='Sending failed. Please try again in a moment.'; note.className='f-note err'; })
+    .finally(function(){ btn.disabled=false; });
+  });
+})();
+</script>
+</body>
+</html>
